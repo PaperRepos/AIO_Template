@@ -39,7 +39,7 @@ usenix: all
 
 # Build PDF using latexmk
 pdf:
-	latexmk -pdf -jobname=$(JOBNAME) -pdflatex='pdflatex -interaction=nonstopmode %O "$(TEX_PREAMBLE) \input{%S}"' $(FILENAME)
+	latexmk -pdf -jobname=$(JOBNAME) -pdflatex='pdflatex -interaction=nonstopmode %O "$(TEX_PREAMBLE)\input{%S}"' $(FILENAME)
 	# Embed fonts using Ghostscript (via ps2pdf)
 	ps2pdf -dColorConversionStrategy=/LeaveColorUnchanged -dPDFSETTINGS=/prepress $(JOBNAME).pdf $(JOBNAME)_font_embedded.pdf
 

@@ -7,27 +7,24 @@ or Math in Paper Title or Abstract.
 % ---------------------------------------------
 % Keywords for different formats
 % ---------------------------------------------
-% 1. IEEE: IEEEkeywords 환경이 정의되어 있을 때만 실행
+% 1. IEEE: IEEEkeywords
 \ifdefined\IEEEkeywords
-    \begin{IEEEkeywords}
-    component, formatting, style, styling, insert
-    \end{IEEEkeywords}
+    % \begin{IEEEkeywords}
+    % component, formatting, style, styling, insert
+    % \end{IEEEkeywords}
 \fi
 
-% 2. ACM: ccsdesc 명령어가 정의되어 있을 때만 실행
-% (CCSXML 환경은 조건문 안에 넣으면 에러가 나므로 밖으로 빼거나 아예 주석 처리해야 해. 
-% 사실 논문 작성 단계에선 ccsdesc만 있어도 충분히 빌드됨)
+% 2. ACM: ccsdesc
 \ifdefined\ccsdesc
-    % \begin{CCSXML} ... \end{CCSXML} 은 주석 처리하거나 지워버려. 빌드에 문제되는 경우가 많아.
-    \ccsdesc[500]{Computer systems organization~Embedded systems}
-    \keywords{datasets, neural networks, gaze detection, text tagging}
+    % \begin{CCSXML} ... \end{CCSXML} % make this comment/remove when causing build issues.
+    % \ccsdesc[500]{Computer systems organization~Embedded systems}
+    % \keywords{datasets, neural networks, gaze detection, text tagging}
 \fi
 
-% 3. USENIX: USENIX는 별도의 키워드 매크로가 없으므로 \ifUSENIX 사용
+% 3. USENIX
 \ifdefined\USENIXtrue % main.tex에서 \USENIXtrue를 활성화했다면
 \ifUSENIX
-    \vspace{0.5cm}
-    \noindent \textbf{Keywords:} component, formatting, style
+    % \vspace{0.5cm}
+    % \noindent \textbf{Keywords:} component, formatting, style
 \fi
 \fi
-

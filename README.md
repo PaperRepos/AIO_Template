@@ -100,7 +100,7 @@ The template is set to use `ref.bib` by default. If you need to use different st
 ## 📝 License
 
 Feel free to use and modify this template for your research projects. Good luck with your submissions!
-Originally created by Jin Heo (@jheo4) and maintained at
+Originally created by Jin Heo ([@jheo4](https://github.com/jheo4)) and maintained at
 https://github.com/PaperRepos/AIO_Template
 
 ---

@@ -1,17 +1,19 @@
-Academic Paper All-in-One Template (IEEE / ACM / USENIX)
-This repository provides a unified LaTeX environment for managing research papers across different conference formats (IEEE, ACM, and USENIX). It minimizes the effort required to re-format papers after a rejection or when targeting different conferences.
+# Academic Paper All-in-One Template (IEEE / ACM / USENIX)
 
-🚀 Key Features
-Single Source of Truth: Manage your content in one place and change formats with a single command.
+This repository provides a unified LaTeX environment for managing research papers across different conference formats (**IEEE**, **ACM**, and **USENIX**). It minimizes the effort required to re-format papers after a rejection or when targeting different conferences.
 
-Modular Structure: Organized folder structure for sections, figures, and utilities.
+## 🚀 Key Features
 
-Smart Build System: Multi-target Makefile for automated PDF generation, font embedding, and submission zipping.
+* **Single Source of Truth**: Manage your content in one place and change formats with a single command.
+* **Modular Structure**: Organized folder structure for sections, figures, and utilities.
+* **Smart Build System**: Multi-target `Makefile` for automated PDF generation, font embedding, and submission zipping.
+* **Quality Control**: Integrated spell-checking and font embedding verification.
 
-Quality Control: Integrated spell-checking and font embedding verification.
+---
 
-📁 Project Structure
-Plaintext
+## 📁 Project Structure
+
+```text
 .
 ├── main.tex              # Main entry point with target selection logic
 ├── Makefile              # Build automation script
@@ -21,24 +23,30 @@ Plaintext
 ├── utils/                # Custom commands and style tweaks
 ├── *.cls / *.sty / *.bst # Conference-specific format files
 └── .gitignore            # Git exclusion rules
-🛠 Prerequisites
+
+```
+
+---
+
+## 🛠 Prerequisites
+
 Ensure you have the following installed:
 
-LaTeX Distribution: TeX Live (recommended) or MiKTeX.
+* **LaTeX Distribution**: TeX Live (recommended) or MiKTeX.
+* **Latexmk**: For automated multi-pass compilation.
+* **Ghostscript (`ps2pdf`)**: For high-quality font embedding.
+* **Aspell**: For the spell-checking feature.
+* **pdffonts**: To verify font embedding status.
 
-Latexmk: For automated multi-pass compilation.
+---
 
-Ghostscript (ps2pdf): For high-quality font embedding.
+## 💻 Usage
 
-Aspell: For the spell-checking feature.
+### 1. Build PDF for Specific Target
 
-pdffonts: To verify font embedding status.
+You can build the paper for a specific conference without modifying the source code. The output PDF will be named `main_{target}.pdf`.
 
-💻 Usage
-1. Build PDF for Specific Target
-You can build the paper for a specific conference without modifying the source code. The output PDF will be named main_{target}.pdf.
-
-Bash
+```bash
 # Build for IEEE (default)
 make ieee
 
@@ -47,8 +55,12 @@ make acm
 
 # Build for USENIX
 make usenix
-2. General Commands
-Bash
+
+```
+
+### 2. General Commands
+
+```bash
 # Clean up all temporary build files
 make clean
 
@@ -57,11 +69,18 @@ make spell
 
 # Create a zip archive for submission (source files only)
 make acm zip    # Creates source_main_acm.zip
-⚙️ Configuration
-Adding Content
-Write your content in the sections/ directory. Use the following logic in main.tex or any sub-file to handle conference-specific commands:
 
-Code snippet
+```
+
+---
+
+## ⚙️ Configuration
+
+### Adding Content
+
+Write your content in the `sections/` directory. Use the following logic in `main.tex` or any sub-file to handle conference-specific commands:
+
+```latex
 \ifIEEE
     % IEEE-specific content/commands
 \fi
@@ -69,8 +88,18 @@ Code snippet
 \ifACM
     % ACM-specific content/commands
 \fi
-Changing Bibliography
-The template is set to use ref.bib by default. If you need to use different styles, the Makefile and main.tex automatically handle \bibliographystyle based on the selected target.
 
-📝 License
+```
+
+### Changing Bibliography
+
+The template is set to use `ref.bib` by default. If you need to use different styles, the `Makefile` and `main.tex` automatically handle `\bibliographystyle` based on the selected target.
+
+---
+
+## 📝 License
+
 Feel free to use and modify this template for your research projects. Good luck with your submissions!
+
+---
+
